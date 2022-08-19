@@ -5,7 +5,7 @@ import { expressApp } from './config/express.js';
 
 const createServerHttp = createServer(expressApp)
 
-const connectMongoose = (url) => mongoose.connect(url)
+const connectMongoose = (url) => mongoose.connect("mongodb+srv://AlexisB:5pfhqVHP89tqLNgt@blogdenotas.gqmxwvg.mongodb.net/?retryWrites=true&w=majority")
 
 connectMongoose
     ? console.log("congratulations, we are successfully connected to mongoose")
