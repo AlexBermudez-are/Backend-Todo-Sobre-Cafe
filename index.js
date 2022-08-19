@@ -16,7 +16,7 @@ const init = async () => {
     await connectMongoose(process.env.MONGODB_URL);
 
     createServerHttp.listen(
-        process.env.PORTDB || 5000,
+        process.env.PORT || 5000,
         process.env.HOST || '0.0.0.0',
         () => { console.log("Servidor funcionando") }
     )
