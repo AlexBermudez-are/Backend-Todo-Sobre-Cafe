@@ -1,5 +1,5 @@
 import '#Config/env.js';
-import {createServer} from 'http'
+import { createServer } from 'http'
 import mongoose from 'mongoose';
 import { expressApp } from './config/express.js';
 
@@ -15,7 +15,11 @@ const init = async () => {
 
     await connectMongoose(process.env.MONGODB_URL);
 
-    createServerHttp.listen(process.env.PORTDB, () => { console.log("Servidor funcionando") })
+    createServerHttp.listen(
+        process.env.PORTDB || 5000,
+        process.env.HOST || '0.0.0.0',
+        () => { console.log("Servidor funcionando") }
+    )
 }
 
 init()
