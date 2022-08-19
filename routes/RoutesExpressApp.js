@@ -7,6 +7,11 @@ import { JWT_Verify } from "../JWT/User_Web_Token.js";
 
 const Route = Router();
 
+Route.get("/", (res, req) => {
+    res.json({
+        "true": true
+    })
+})
 Route.post('/login', User_Login_DTO, User_Login_Controller)
 Route.post('/register', User_Register_DTO, User_Register_Controller);
 Route.post('/forgotten-password', JWT_Verify);
