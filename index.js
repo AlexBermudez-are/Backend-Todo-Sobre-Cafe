@@ -13,9 +13,9 @@ connectMongoose
 
 const init = async () => {
 
-    await connectMongoose("mongodb+srv://AlexisB:5pfhqVHP89tqLNgt@blogdenotas.gqmxwvg.mongodb.net/?retryWrites=true&w=majority");
+    await connectMongoose(process.env.MONGODB_URL);
 
-    createServerHttp.listen(3080, () => { console.log(`Servidor funcionando en el puerto ${process.env.PORTDB}`) })
+    createServerHttp.listen(process.env.PORTDB, () => { console.log("Servidor funcionando") })
 }
 
 init()
