@@ -28,7 +28,7 @@ const User_Register_Controller = async (req, res) => {
         return res.status(201).send('The user is created succesfully')
 
     } catch (error) {
-        return res.status(400).send({ error: error })
+        return res.status(400).json({ error: error })
     }
 }
 

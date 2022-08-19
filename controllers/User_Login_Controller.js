@@ -22,7 +22,7 @@ const User_Login_Controller = async (req, res) => {
         .setIssuedAt()
         .setExpirationTime('7d')
         .sign(encoder.encode(process.env.JWT_KEY));
-    return res.send({jwt})
+    return res.json({jwt})
 }
 
 export { User_Login_Controller }

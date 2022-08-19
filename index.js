@@ -1,9 +1,15 @@
-import '#Config/env.js'; // Importa la configuracion de .Env
-import { connectMongoose } from '#Config/mongoose.js';
-// Importa la funcion para conectar mongoose
+import '#Config/env.js';
+import {createServer} from 'http'
+import mongoose from 'mongoose';
+import { expressApp } from './config/express.js';
 
-import { createServerHttp } from '#Config/Http.js';
+const createServerHttp = createServer(expressApp)
 
+const connectMongoose = (url) => mongoose.connect(url)
+
+connectMongoose
+    ? console.log("congratulations, we are successfully connected to mongoose")
+    : console.log("Error, could not connect to mongoose")
 
 const init = async () => {
 
